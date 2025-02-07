@@ -120,7 +120,7 @@ app.post('/login', loginLimiter, async (req, res) => {
 });
 
 // ✅ ตรวจสอบว่าเซิร์ฟเวอร์กำลังรันอยู่แล้วหรือไม่
-const PORT = 3000;
+const PORT = 3001;
 app.listen(PORT, () => {
     console.log(`🚀 Server is running at http://localhost:${PORT}`);
 });
