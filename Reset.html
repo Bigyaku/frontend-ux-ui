@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend-ux-ui-main/css/CssProject.css">
+    <title>Reset Password</title>
+</head>
+<body>
+    <div class="Reset-box">
+        <div class="Reset-header">
+            <h1>Reset Password</h1>
+        </div>
+
+        <form id="ResetForm" action="/update-password" method="POST">
+            <!-- Hidden input for token -->
+            <input type="hidden" id="resetToken" name="token" value="{{token}}">
+
+            <div class="input-box">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="input-field" placeholder="Username" autocomplete="off" required>
+            </div>
+        
+            <div class="input-box">
+                <label for="password">Update password</label>
+                <input type="password" id="password" name="password" class="input-field" placeholder="Password" autocomplete="off" required>
+            </div>
+        
+            <div class="forgot">
+                <section>
+                    <input type="checkbox" id="check" name="rememberMe">
+                    <label for="check">Remember Me</label>
+                </section>
+                <section>
+                    <a href="/Forgot.html">Forgot Password</a>
+                </section>
+            </div>
+        
+            <div class="input-submit">
+                <button type="submit" class="submit-btn" id="signInButton">Submit</button>
+            </div>
+        
+            <div class="sign-up-link">
+                <p>Don't have an account? <a href="/Register.html">Sign Up</a></p>
+            </div>
+        </form>
+        
+    </div>
+
+    <script>
+        // JavaScript to extract token from URL and set it in hidden input
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');  // Get token from URL
+        if (token) {
+            document.getElementById('resetToken').value = token;  // Set token in hidden input field
+        }
+    </script>
+</body>
+</html>
