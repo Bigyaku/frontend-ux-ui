@@ -1,9 +1,9 @@
 ขั้นตอนการติดตั้งเพื่อ run server
 //การติดตั้ง
 
-1.กดที่ flie แล้วแล้วเลือก RUN SQL.file แล้วเลือก databas.sql กด open
+1.กดที่ flie แล้วแล้วเลือก RUN SQL.file แล้วเลือก Database.sql กด open
 
-2.Set database connection int .env file database session name=(user) username=(na) user=(web) password=(5555) port=3306
+2.Set database connection int .env file database session name=(Unnamed-1)  user=(root) password=(new_password) port=3306
 
 npm i init -y
 
