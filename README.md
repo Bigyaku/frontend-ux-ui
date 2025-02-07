@@ -7,7 +7,8 @@
 
 npm i init -y
 
-npm install express mysql2 body-parser cors bcrypt dotenv
+npm install express mysql2 bcryptjs body-parser cookie-parser path express-rate-limit
+
 
 // run server เพื่อเปิดใช้งานเว็บ
 
