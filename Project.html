@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แนะนำการออกกำลังกายในฟิตเนส</title>
+    <link rel="stylesheet" href="/css/CssProject.css">
+    <link rel="stylesheet" href="/css/CssButtonProject.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>แนะนำการออกกำลังกายในฟิตเนส</h1>
+        <p>BUILD YOUR PHYSIC DREAM</p>
+        <nav>
+            <div id="userIcon">
+                <a href="/Login.html" id="loginLink">
+                    <h3>Login</h3>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Faculty List -->
+    <section class="faculty-list">
+        <div class="faculty">
+            <h2>CHEST</h2>
+            <img src="/image/1.jpeg" alt="Chest Image">
+            <div class="button-group">
+                <a href="/back/CHEST/LChest.html"><button>LOWER</button></a>
+                <a href="/back/CHEST/MChest.html"><button>MIDDLE</button></a>
+                <a href="/back/CHEST/UChest.html"><button>UPPER</button></a>
+            </div>
+        </div>
+	<!-- Back -->
+        <div class="faculty">
+            <h2>BACK</h2>
+            <img src="/image/2.jpeg" alt="Back Image">
+            <div class="button-group">
+                <a href="/back/BACK/UBack.html"><button>UPPER</button></a>
+                <a href="/back/BACK/LABack.HTML"><button>LAT</button></a>
+                <a href="/back/BACK/LBack.html"><button>LOWER</button></a>
+            </div>
+        </div>
+
+        <!-- Shoulders -->
+        <div class="faculty">
+            <h2>SHOULDER</h2>
+            <img src="/image/1.2.JPEG" alt="Shoulder Image">
+            <div class="button-group">
+                <a href="/back/SHOLDER/FSholder.html"><button>FRONT</button></a>
+                <a href="/back/SHOLDER/LSholder.html"><button>LATERAL</button></a>
+                <a href="/back/SHOLDER/RSholder.html"><button>REAR</button></a>
+            </div>
+        </div>
+
+        <!-- Legs -->
+        <div class="faculty">
+            <h2>LEG</h2>
+            <img src="/image/3.JPG" alt="Leg Image">
+            <div class="button-group">
+                <a href="/back/LEG/CLeg.html"><button>CALVES</button></a>
+                <a href="/back/LEG/HLeg.html"><button>HAMSTRING</button></a>
+                <a href="/back/LEG/QLeg.html"><button>QUAD</button></a>
+            </div>
+        </div>
+
+        <!-- Arms -->
+        <div class="faculty">
+            <h2>ARM</h2>
+            <img src="/image/5.2.JPEG" alt="Arm Image">
+            <div class="button-group">
+                <a href="/back/ARM/BArm.html"><button>BICEP</button></a>
+                <a href="/back/ARM/FArm.html"><button>FOREARM</button></a>
+                <a href="/back/ARM/TArm.html"><button>TRICEPT</button></a>
+            </div>
+        </div>
+
+        <!-- Abs -->
+        <div class="faculty">
+            <h2>ABS</h2>
+            <img src="/image/6.jpeg" alt="Abs Image">
+            <div class="button-group">
+                <a href="/back/ABS/LABS.HTML"><button>LOWER</button></a>
+                <a href="/back/ABS/OABS.HTML"><button>OBLIQUES</button></a>
+                <a href="/back/ABS/UABS.html"><button>UPPER</button></a>
+            </div>
+        </div>
+    </section>
+
+        <!-- เพิ่มหมวดหมู่อื่นๆ ตามที่คุณมี -->
+
+    </section>
+
+    <!-- JavaScript เช็คสถานะการล็อกอิน -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("/check-login")
+                .then(response => response.json())
+                .then(data => {
+                    if (data.loggedIn) {
+                        document.getElementById("userIcon").innerHTML = `
+                            <div class="user-profile">
+                                
+                                <span>${data.username}</span>
+                                <a href="#" id="logoutButton">Logout</a>
+                            </div>
+                        `;
+
+                        // เพิ่ม event listener สำหรับ Logout
+                        document.getElementById("logoutButton").addEventListener("click", function () {
+                            fetch("/logout", { method: "POST" })
+                                .then(() => {
+                                    window.location.reload(); // รีเฟรชหน้าเพื่อเปลี่ยนกลับเป็นปุ่ม Login
+                                });
+                        });
+                    }
+                })
+                .catch(error => console.error("Error checking login:", error));
+        });
+    </script>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-main">
+            <div class="footer-left">
+                <h1>&copy; 2025 มหาวิทยาลัยพะเยา</h1>
+            </div>
+            <div class="footer-right">
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/ziri.naoprai.9" target="_blank">
+                        <img src="/image/fb.jpg" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="https://line.me/ti/p/UCk-GVIxgW" target="_blank">
+                        <img src="/image/l.jpg" alt="Line" class="social-icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

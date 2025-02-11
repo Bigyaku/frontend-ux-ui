@@ -1,0 +1,97 @@
+nav { 
+    position: absolute; /* ใช้ position absolute เพื่อวางตำแหน่ง */
+    top: 20px; /* ระยะห่างจากด้านบน */
+    right: 20px; /* ระยะห่างจากด้านขวา */
+    display: flex; /* ถ้ามีหลายปุ่ม จะจัดเรียงด้วย Flexbox */
+    gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px; /* เพิ่มขนาดปุ่ม */
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #007BFF; /* สีพื้นหลังปุ่ม */
+    color: #fff; /* สีข้อความ */
+    border: none;
+    border-radius: 5px; /* มุมโค้งมน */
+    cursor: pointer; /* เปลี่ยนเมาส์เป็นรูปมือ */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* เพิ่มเอฟเฟกต์ */
+}
+
+.nav-button:hover {
+    background-color: #0056b3; /* เปลี่ยนสีเมื่อวางเมาส์ */
+    transform: scale(1.05); /* ขยายขนาดเมื่อวางเมาส์ */
+}
+
+.nav-button:active {
+    background-color: #003f7f; /* เปลี่ยนสีเมื่อคลิก */
+    transform: scale(0.95); /* ลดขนาดเมื่อกด */
+}
+
+/* ใช้ไอคอนดัมเบลสำหรับปุ่มที่ไม่มีไอคอน */
+.nav-button::before {
+    content: "";
+    background-image: url('/image/dumbbell-icon.png'); /* เปลี่ยนให้ใช้ path ที่ถูกต้อง */
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+/* ปรับแต่งปุ่มล็อกอินให้เป็นสี่เหลี่ยมสมมาตร */
+nav {
+    position: absolute; /* ใช้ position absolute เพื่อวางตำแหน่ง */
+    top: 20px; /* ระยะห่างจากด้านบน */
+    right: 20px; /* ระยะห่างจากด้านขวา */
+    display: flex; /* ถ้ามีหลายปุ่ม จะจัดเรียงด้วย Flexbox */
+    gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+    flex-direction: column; /* แก้ไขให้ปุ่มเรียงในแนวตั้ง */
+    align-items: center; /* จัดให้อยู่กลาง */
+}
+
+/* เพิ่มกรอบให้กับปุ่ม Login */
+.nav-button.login {
+    width: 150px; /* กำหนดความกว้างของปุ่ม */
+    height: 50px; /* กำหนดความสูงของปุ่ม */
+    background-color: #007BFF; /* สีพื้นหลังปุ่ม */
+    color: #fff; /* สีข้อความ */
+    font-size: 18px; /* ขนาดตัวอักษร */
+    font-weight: bold; /* ตัวหนา */
+    border-radius: 25px; /* มุมปุ่มโค้งมน */
+    border: none; /* ลบขอบของปุ่ม */
+    display: flex;
+    justify-content: center; /* จัดให้ข้อความอยู่กลาง */
+    align-items: center; /* จัดให้ข้อความอยู่กลาง */
+    cursor: pointer; /* แสดงรูปมือเมื่อเมาส์ชี้ */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* เอฟเฟกต์เปลี่ยนสีเมื่อคลิก */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* ใส่เงาให้ปุ่ม */
+    margin-bottom: 10px; /* ระยะห่างระหว่างปุ่ม Login และปุ่มอื่นๆ */
+}
+
+.nav-button.login:hover {
+    background-color: #0056b3; /* สีเมื่อวางเมาส์ */
+    transform: scale(1.05); /* ขยายขนาดเล็กน้อยเมื่อวางเมาส์ */
+}
+
+.nav-button.login:active {
+    background-color: #003f7f; /* สีเมื่อคลิก */
+    transform: scale(0.95); /* ย่อขนาดเล็กเมื่อคลิก */
+}
+
+.nav-button::before {
+    content: "";
+    background-image: url('/image/dumbbell-icon.png'); /* เปลี่ยนให้ใช้ path ที่ถูกต้อง */
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+

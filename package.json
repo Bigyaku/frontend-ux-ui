@@ -1,0 +1,23 @@
+{
+  "name": "frontend-ux-ui-main",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "fs": "^0.0.1-security",
+    "mysql2": "^3.12.0",
+    "nodemailer": "^6.10.0",
+    "path": "^0.12.7",
+    "sequelize": "^6.6.5"
+  }
+}

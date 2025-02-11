@@ -1,0 +1,173 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #424242;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Navbar */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007BFF;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #0056b3;
+}
+
+/* Faculty List */
+.faculty-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.faculty {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.faculty:hover {
+    transform: translateY(-5px);
+}
+
+.faculty img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.faculty h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.button-group a {
+    display: block;
+    margin: 10px 0;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: #424242;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed; /* ทำให้ฟุตเตอร์อยู่ติดด้านล่าง */
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    /* display: flex; */
+}
+
+/* Footer Main */
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+
+}
+
+/* Footer Left (มหาวิทยาลัยพะเยา) */
+.footer-left h1 {
+    font-size: 1em;
+    margin: 0; /* ปรับให้ไม่มีช่องว่าง */
+    text-align: right; /* ให้ข้อความชิดขวา */
+}
+
+/* Footer Right (Social Icons) */
+.footer-right {
+    display: flex;
+    justify-content: flex-end; /* จัดตำแหน่งไอคอนไปทางขวา */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .footer-main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left {
+        text-align: center; /* เปลี่ยนให้ข้อความอยู่กลางในหน้าจอเล็ก */
+    }
+
+    .footer-right {
+        justify-content: center; /* ให้ไอคอนอยู่กลาง */
+    }
+}
+

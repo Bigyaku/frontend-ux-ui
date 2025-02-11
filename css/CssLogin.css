@@ -1,0 +1,118 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("/image/BG.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-box, .sign-up-box, .forgot-password-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background-color: #f4f4f9;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* ปรับกรอบช่องกรอกข้อมูล */
+.input-box {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* เปลี่ยนสีกรอบและเงาเมื่อฟอร์มได้รับการโฟกัส */
+.input-box input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* เพิ่มความห่างระหว่างข้อความและกรอบ */
+.input-box label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+  text-align: left;
+  color: #666;
+}
+
+/* ปุ่ม Submit */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Link Forgot & Sign Up */
+.forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #007BFF;
+}
+
+.forgot a {
+  text-decoration: none;
+}
+
+.forgot a:hover {
+  text-decoration: underline;
+}
+
+.sign-up-link p {
+  font-size: 14px;
+  color: #333;
+}
+
+.sign-up-link a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.sign-up-link a:hover {
+  text-decoration: underline;
+}
+
+/* สำหรับ mobile */
+@media (max-width: 600px) {
+  .login-box, .sign-up-box, .forgot-password-box {
+      width: 90%;
+      padding: 20px;
+  }
+}
