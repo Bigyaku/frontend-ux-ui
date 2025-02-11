@@ -1,17 +1,28 @@
-ขั้นตอนการติดตั้งเพื่อ run server
-//การติดตั้ง
+# Fitness Workout Application
 
-1.กดที่ flie แล้วแล้วเลือก RUN SQL.file แล้วเลือก Database.sql กด open
+แอปพลิเคชันสำหรับการออกกำลังกายในฟิตเนส
 
-2.Set database connection int .env file database session name=(Unnamed-1)  user=(root) password=(new_password) port=3306
+## การติดตั้งและการใช้งาน
 
-npm i init -y
+### 1. การติดตั้งฐานข้อมูล
+1. กดที่ **File** แล้วเลือก **RUN SQL File** จากนั้นเลือก **Database.sql** และกด **Open** เพื่อทำการสร้างฐานข้อมูล
 
+2. ตั้งค่าการเชื่อมต่อฐานข้อมูลในไฟล์ `.env` โดยตั้งค่าในส่วนของ `DB_HOST`, `DB_USER`, `DB_PASS`, และ `DB_NAME` ดังนี้:
+   ```env
+   DB_HOST=localhost
+   DB_USER=root
+   DB_PASS=new_password
+   DB_NAME=user_db
+
+เปิดเทอร์มินัลหรือ Command Prompt ในโฟลเดอร์โปรเจค
+
+รันคำสั่งเพื่อสร้าง package.json:
+npm init -y
+
+ติดตั้ง dependencies ที่จำเป็น:
 npm install express mysql2 bcryptjs body-parser cookie-parser path express-rate-limit
 
-
-// run server เพื่อเปิดใช้งานเว็บ
-
+รันคำสั่งเพื่อเริ่มเซิร์ฟเวอร์:
 npm run start
 
 สมาชิกกลุ่ม
