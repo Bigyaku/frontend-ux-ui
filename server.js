@@ -43,35 +43,36 @@ app.use(express.static(__dirname));
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'Login.html')));
 app.get('/project', (req, res) => res.sendFile(path.join(__dirname, 'Project.html')));
 
-// ✅ API ล็อกอิน
-app.post('/login', (req, res) => {
-    const { email, password } = req.body;
-    console.log("🔑 Login request received:", email);
+// ✅ API ลงทะเบียน
+app.post('/register', async (req, res) => {
+    const { username, email, password } = req.body;
+    console.log("📩 Register request received:", { username, email });
 
-    const sql = 'SELECT * FROM users WHERE email = ?';
-    db.query(sql, [email], async (err, result) => {
+    const checkQuery = 'SELECT * FROM users WHERE username = ? OR email = ?';
+    db.query(checkQuery, [username, email], async (err, result) => {
         if (err) {
-            console.error('❌ Database error:', err);
-            return res.status(500).json({ message: 'Database error' });
+            console.error('❌ Error checking user:', err);
+            return res.status(500).json({ message: 'Internal Server Error' });
+        }
+        if (result.length > 0) {
+            console.warn("⚠️ Username or Email already exists!");
+            return res.status(400).json({ message: 'Username or email already exists.' });
         }
 
-        if (result.length === 0) {
-            console.warn("⚠️ User not found:", email);
-            return res.status(400).json({ message: 'User not found' });
-        }
-
-        const user = result[0];
-        const isMatch = await bcrypt.compare(password, user.password);
-
-        if (!isMatch) {
-            console.warn("⚠️ Invalid password for user:", email);
-            return res.status(401).json({ message: 'Invalid password' });
-        }
-
-        console.log("✅ Login successful:", user.username);
-        res.status(200).json({ message: 'Login successful', username: user.username });
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
+        const insertQuery = 'INSERT INTO users (username, email, password) VALUES (?, ?, ?)';
+        db.query(insertQuery, [username, email, hashedPassword], (err) => {
+            if (err) {
+                console.error('❌ Error inserting user:', err);
+                return res.status(500).json({ message: 'Internal Server Error' });
+            }
+            console.log("✅ Registration successful:", username);
+            res.status(201).json({ message: '✅ Registration successful!' });
+        });
     });
 });
+
+
 
 // ✅ API ล็อกอิน
 app.post('/login', (req, res) => {
